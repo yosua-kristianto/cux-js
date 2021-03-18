@@ -1,3 +1,6 @@
+// constant
+const INDEX = 0;
+
 // Only number input allowed 
 var inputNumberOnly = document.getElementsByClassName("input-number-only");
 
@@ -5,6 +8,23 @@ for(let i = 0; i < inputNumberOnly.length; i++){
     inputNumberOnly[i].addEventListener("keypress", function(evt){
         if(evt.which < 48 || evt.which > 57)
             evt.preventDefault();
+    });
+
+    inputNumberOnly[i].addEventListener("paste", function(evt){
+        var text = (evt.clipboardData).getData('text'); 
+        evt.preventDefault();
+
+        var final_text = "";
+
+        for(j = 0; j< text.length; j++){
+            var ascii = text.charAt(j).charCodeAt(INDEX);
+
+            if(!(ascii < 48 || ascii > 57)){
+                final_text += text[j].toString();
+            }
+        }
+
+        this.value += final_text.toString();
     });
 }
 
@@ -16,6 +36,23 @@ for(let i = 0; i < inputAlphaOnly.length; i++){
         if((evt.which < 65 || evt.which > 90) && (evt.which < 97 || evt.which > 122) && evt.which != 32)
             evt.preventDefault();
     });
+
+    inputAlphaOnly[i].addEventListener("paste", function(evt){
+        var text = (evt.clipboardData).getData('text'); 
+        evt.preventDefault();
+
+        var final_text = "";
+
+        for(j = 0; j< text.length; j++){
+            var ascii = text.charAt(j).charCodeAt(INDEX);
+
+            if(!((ascii < 65 || ascii > 90) && (ascii < 97 || ascii > 122) && ascii != 32)){
+                final_text += text[j].toString();
+            }
+        }
+
+        this.value += final_text.toString();
+    });
 }
 
 // Only Alphanumeric upper and lower case and space are allowed
@@ -25,6 +62,23 @@ for(let i = 0; i < inputAlnumOnly.length; i++){
     inputAlnumOnly[i].addEventListener("keypress", function(evt){
         if((evt.which < 48 || evt.which > 57) && (evt.which < 65 || evt.which > 90) && (evt.which < 97 || evt.which > 122) && evt.which != 32)
             evt.preventDefault();
+    });
+
+    inputAlnumOnly[i].addEventListener("paste", function(evt){
+        var text = (evt.clipboardData).getData('text'); 
+        evt.preventDefault();
+
+        var final_text = "";
+
+        for(j = 0; j< text.length; j++){
+            var ascii = text.charAt(j).charCodeAt(INDEX);
+
+            if(!((ascii < 48 || ascii > 57) && (ascii < 65 || ascii > 90) && (ascii < 97 || ascii > 122) && ascii != 32)){
+                final_text += text[j].toString();
+            }
+        }
+
+        this.value += final_text.toString();
     });
 }
 
@@ -36,6 +90,23 @@ for(let i = 0; i < inputLowerOnly.length; i++){
         if(evt.which < 97 || evt.which > 122)
             evt.preventDefault();
     });
+
+    inputLowerOnly[i].addEventListener("paste", function(evt){
+        var text = (evt.clipboardData).getData('text'); 
+        evt.preventDefault();
+
+        var final_text = "";
+
+        for(j = 0; j< text.length; j++){
+            var ascii = text.charAt(j).charCodeAt(INDEX);
+
+            if(!(ascii < 97 || ascii > 122)){
+                final_text += text[j].toString();
+            }
+        }
+
+        this.value += final_text.toString();
+    });
 }
 
 // Only upper case alphabeth are allowed
@@ -45,6 +116,23 @@ for(let i = 0; i < inputUpperOnly.length; i++){
     inputUpperOnly[i].addEventListener("keypress", function(evt){
         if(evt.which < 65 || evt.which > 90)
             evt.preventDefault();
+    });
+
+    inputUpperOnly[i].addEventListener("paste", function(evt){
+        var text = (evt.clipboardData).getData('text'); 
+        evt.preventDefault();
+
+        var final_text = "";
+
+        for(j = 0; j< text.length; j++){
+            var ascii = text.charAt(j).charCodeAt(INDEX);
+
+            if(!(ascii < 65 || ascii > 90)){
+                final_text += text[j].toString();
+            }
+        }
+
+        this.value += final_text.toString();
     });
 }
 

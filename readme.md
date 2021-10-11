@@ -41,3 +41,4 @@ Just another Javascript helper library for free.
 | 7 | `cant-space` | The text field can't have space. |
 | 8 | `input-clock input-hour` | The text field have hour clock rule. (00-23) |
 | 9 | `input-clock input-minute` | The text field have minute clock rule. (00-59) |
+| 10 | `anti-xss` | The text field cannot put any code that make Cross-Site Scripting Attack possible. |

@@ -236,14 +236,14 @@ var antiXss = document.getElementsByClassName("anti-xss");
  */
 const xssFactor = [33, 34, 35, 59, 60, 61, 62, 47, 92, 94];
 
-for(let i = 0; i < inputNumberOnly.length; i++){
-    inputNumberOnly[i].addEventListener("keypress", function(evt){
+for(let i = 0; i < antiXss.length; i++){
+    antiXss[i].addEventListener("keypress", function(evt){
         if(xssFactor.includes(evt.which)){
           evt.preventDefault();
         }
     });
 
-    inputNumberOnly[i].addEventListener("paste", function(evt){
+    antiXss[i].addEventListener("paste", function(evt){
         var text = (evt.clipboardData).getData('text'); 
         evt.preventDefault();
 
